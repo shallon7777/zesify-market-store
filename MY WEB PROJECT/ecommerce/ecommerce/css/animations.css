@@ -1,0 +1,396 @@
+/* Animations and Transitions */
+
+/* Keyframes Definitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 7px rgba(59, 130, 246, 0);
+  }
+  
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes cartBounce {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.15); }
+  60% { transform: scale(0.95); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Button Animations */
+.primary-button, 
+.secondary-button,
+.add-to-cart-button {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-button:hover, 
+.secondary-button:hover,
+.add-to-cart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button::after,
+.add-to-cart-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  transition: left 0.8s ease;
+}
+
+.primary-button:hover::after,
+.add-to-cart-button:hover::after {
+  left: 100%;
+}
+
+/* Product Card Animations */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .product-actions {
+  transform: translateX(10px);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.product-card:hover .product-actions {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.product-card .product-image img {
+  transition: transform 0.7s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+}
+
+/* Added to Cart Animation */
+.added-to-cart {
+  animation: cartBounce 0.6s ease forwards;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--primary-color, #4F46E5);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Category Card Effects */
+.category-card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0));
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+/* Category Navigation Animation */
+.category-link {
+  position: relative;
+}
+
+.category-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color, #4F46E5);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.category-link:hover::after,
+.category-link.active::after {
+  width: 100%;
+}
+
+/* Notification Animation */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  color: #333;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease-out;
+}
+
+.notification.is-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification.success { background-color: #10B981; color: white; }
+.notification.error { background-color: #EF4444; color: white; }
+.notification.info { background-color: #3B82F6; color: white; }
+
+/* Icon for notifications */
+.notification::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.notification.success::before { content: "\f058"; /* Check circle */ }
+.notification.error::before { content: "\f071"; /* Exclamation triangle */ }
+.notification.info::before { content: "\f05a"; /* Info circle */ }
+
+/* Lazy Load Animation */
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Social Links Hover */
+.social-link {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+/* Action Button Badge */
+.action-button.has-badge {
+  position: relative;
+}
+
+.action-button.has-badge::after {
+  content: attr(data-count);
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--primary-color, #4F46E5);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+/* Section Header Animations */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  position: relative;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color, #4F46E5);
+  border-radius: 3px;
+}
+
+.section-subtitle {
+  color: #6B7280;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.see-all-link {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color, #4F46E5);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.see-all-link:hover {
+  transform: translateX(5px);
+}
+
+.see-all-link i {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* JS-triggered animations */
+.stagger-children > * {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-js {
+  transition: opacity 0.5s ease;
+}
+
+.fade-in-js.animate {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-up-js {
+  transition: all 0.5s ease;
+}
+
+.fade-up-js.animate {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Page Transition */
+.page-enter {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page-enter-active {
+  opacity: 1;
+}
+
+.page-exit {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page-exit-active {
+  opacity: 0;
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

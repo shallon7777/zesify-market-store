@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketPlace - Modern E-commerce</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-start">
+                <div class="logo">
+                    <i class="fa-solid fa-store"></i>
+                    <span>ZESIFY ONLINE SHOPPING</span>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link active">Home</a></li>
+                        <li><a href="#" class="nav-link">Shop</a></li>
+                        <li><a href="#" class="nav-link">Vendors</a></li>
+                        <li><a href="#" class="nav-link">Deals</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Search products, brands, categories...">
+                <button type="submit" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            
+            <div class="header-end">
+                <div class="header-actions">
+                    <button class="action-button" title="Wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <button class="action-button has-badge" data-count="0" title="Shopping Cart" id="cart-button">
+                        <i class="fa-solid fa-shopping-bag"></i>
+                    </button>
+                    <button class="action-button" title="Account">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
+                </div>
+                <button class="primary-button" id="vendor-button">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Sell</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Navigation -->
+    <nav class="categories-nav">
+        <div class="container categories-container">
+            <ul class="category-list">
+                <li><a href="#" class="category-link active">All Categories</a></li>
+                <li><a href="#" class="category-link">Electronics</a></li>
+                <li><a href="#" class="category-link">Fashion</a></li>
+                <li><a href="#" class="category-link">Home & Living</a></li>
+                <li><a href="#" class="category-link">Beauty</a></li>
+                <li><a href="#" class="category-link">Sports</a></li>
+                <li><a href="#" class="category-link">Toys</a></li>
+                <li><a href="#" class="category-link">Books</a></li>
+                <li><a href="#" class="category-link">Health</a></li>
+                <li><a href="#" class="category-link">Automotive</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Discover Amazing Products</h1>
+                    <p class="hero-subtitle">Shop from thousands of trusted vendors worldwide, with secure payments and fast delivery.</p>
+                    <div class="hero-actions">
+                        <a href="#" class="primary-button hero-button">
+                            <span>Shop Now</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="secondary-button hero-button">
+                            <span>Learn More</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Featured Products">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Shop by Category</h2>
+                        <p class="section-subtitle">Browse through our popular categories</p>
+                    </div>
+                    <a href="#" class="see-all-link">
+                        <span>See All Categories</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                
+                <div class="categories-grid">
+                    <a href="#" class="category-card">
+                        <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Electronics">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Electronics</h3>
+                            <p class="category-count">1,245 products</p>
+                        </div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fashion">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Fashion</h3>
+                            <p class="category-count">2,156 products</p>
+                        </div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home & Living">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Home & Living</h3>
+                            <p class="category-count">1,832 products</p>
+                        </div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beauty">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Beauty</h3>
+                            <p class="category-count">976 products</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Featured Products</h2>
+                        <p class="section-subtitle">Handpicked for you</p>
+                    </div>
+                    <a href="#" class="see-all-link">
+                        <span>View All Products</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                
+                <div class="products-grid" id="featured-products">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section class="section offers-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Special Offers</h2>
+                        <p class="section-subtitle">Limited time deals</p>
+                    </div>
+                    <a href="#" class="see-all-link">
+                        <span>View All Offers</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                
+                <div class="products-grid" id="special-offers">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">New Arrivals</h2>
+                        <p class="section-subtitle">Fresh and trending products</p>
+                    </div>
+                    <a href="#" class="see-all-link">
+                        <span>View All New Arrivals</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                
+                <div class="products-grid" id="new-arrivals">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Vendors -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Popular Vendors</h2>
+                        <p class="section-subtitle">Trusted by thousands</p>
+                    </div>
+                    <a href="#" class="see-all-link">
+                        <span>View All Vendors</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                
+                <div class="vendors-grid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MarketPlace</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">About Us</a>
+                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link">Press</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>For Shoppers</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">How to Shop</a>
+                        <a href="#" class="footer-link">Shipping & Delivery</a>
+                        <a href="#" class="footer-link">Returns & Exchanges</a>
+                        <a href="#" class="footer-link">FAQs</a>
+                        <a href="#" class="footer-link">Discount Programs</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>For Vendors</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Sell on MarketPlace</a>
+                        <a href="#" class="footer-link">Vendor Portal</a>
+                        <a href="#" class="footer-link">Vendor Guidelines</a>
+                        <a href="#" class="footer-link">Vendor Success Stories</a>
+                        <a href="#" class="footer-link">Vendor Support</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Download Our App</h3>
+                    <p>Shop on the go with our mobile app. Available for iOS and Android.</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">
+                            <img src="https://img.icons8.com/color/96/000000/app-store.png" alt="App Store">
+                        </a>
+                        <a href="#" class="app-button">
+                            <img src="https://img.icons8.com/color/96/000000/google-play.png" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MarketPlace. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/vendors.js"></script>
+</body>
+</html>
